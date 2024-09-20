@@ -9,7 +9,7 @@ function Demo() {
       <div className='flex flex-col space-y-4'>
         <InputBase placeholder="Enter your first name" />
         <ButtonBase type='primary'>Sign In</ButtonBase>
-        <Table pagination={false} className='table_custom' columns={[{
+        <Table loading pagination={false} className='table_custom' columns={[{
           title: 'Name',
           dataIndex: 'name',
           key: 'name',

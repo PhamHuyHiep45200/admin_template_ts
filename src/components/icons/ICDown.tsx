@@ -3,7 +3,7 @@ import React from 'react'
 function ICDown({ open }: { open: boolean }) {
   return (
     <svg
-      className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${open && 'rotate-180'
+      className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current transition-all duration-200 ${open && 'rotate-[-180deg]'
         }`}
       width="20"
       height="20"
