@@ -39,7 +39,7 @@ function App() {
           index
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="JRE Admin" />
               <ECommerce />
             </>
           }
@@ -98,7 +98,7 @@ function App() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/chart"
           element={
             <>
@@ -151,7 +151,7 @@ function App() {
               <Demo />
             </>
           }
-        />
+        /> */}
       </Routes>
     </DefaultLayout>
   );

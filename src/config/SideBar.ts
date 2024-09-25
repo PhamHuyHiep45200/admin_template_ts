@@ -1,36 +1,55 @@
-import ICDashboard from "../components/icons/ICDashboard";
-import { SideBarType } from "../models/sidebar";
+import { ICAllNotifications } from '../components/icons/ICAllNotifications';
+import { IcApplication } from '../components/icons/IcApplication';
+import { ICCollections } from '../components/icons/ICCollections';
+import { ICDashboard } from '../components/icons/ICDashboard';
+import { ICManageCollection } from '../components/icons/ICManageCollection';
+import { ICManageUser } from '../components/icons/ICManageUser';
+import { SideBarType } from '../models/sidebar';
 
 export const SideBar: SideBarType[] = [
   {
     pathName: '/',
-    pathNameActive: "dashboard",
-    title: 'Dashboard',
+    pathNameActive: 'dashboard',
+    title: 'Manage',
     icon: ICDashboard,
     chidlren: [
       {
-        title: 'eCommerce',
+        title: 'Login authentication',
         pathName: '/',
-      }
-    ]
+      },
+      {
+        title: 'User Login Management',
+        pathName: '/',
+      },
+    ],
   },
   {
     pathName: '/calendar',
-    pathNameActive: "calendar",
-    title: 'Calendar',
-    icon: ICDashboard,
+    pathNameActive: 'calendar',
+    title: 'User Management',
+    icon: ICManageUser,
+    chidlren: [
+      {
+        title: 'Login authentication',
+        pathName: '/',
+      },
+      {
+        title: 'User Login Management',
+        pathName: '/',
+      },
+    ],
   },
   {
     pathName: '/profile',
-    pathNameActive: "profile",
-    title: 'Profile',
-    icon: ICDashboard,
+    pathNameActive: 'profile',
+    title: 'NFT Collections Management',
+    icon: ICManageCollection,
   },
   {
     pathName: '/forms',
-    pathNameActive: "forms",
-    title: 'Forms',
-    icon: ICDashboard,
+    pathNameActive: 'forms',
+    title: 'NFT Management',
+    icon: ICCollections,
     chidlren: [
       {
         title: 'Form Elements',
@@ -39,66 +58,19 @@ export const SideBar: SideBarType[] = [
       {
         title: 'Form Layout',
         pathName: '/forms/form-layout',
-      }
-    ]
+      },
+    ],
   },
   {
     pathName: '/tables',
-    pathNameActive: "tables",
-    title: 'Tables',
-    icon: ICDashboard,
+    pathNameActive: 'tables',
+    title: 'Application Management',
+    icon: IcApplication,
   },
   {
     pathName: '/settings',
-    pathNameActive: "settings",
-    title: 'Settings',
-    icon: ICDashboard,
+    pathNameActive: 'settings',
+    title: 'Notifications',
+    icon: ICAllNotifications,
   },
-]
-
-export const SideBarOther: SideBarType[] = [
-  {
-    pathName: '/chart',
-    pathNameActive: "chart",
-    title: 'Chart',
-    icon: ICDashboard,
-  },
-  {
-    pathName: '/ui',
-    pathNameActive: "ui",
-    title: 'UI Elements',
-    icon: ICDashboard,
-    chidlren: [
-      {
-        title: 'Alerts',
-        pathName: '/ui/alerts',
-      },
-      {
-        title: 'Buttons',
-        pathName: '/ui/buttons',
-      }
-    ]
-  },
-  {
-    pathName: '/auth',
-    pathNameActive: "auth",
-    title: 'Authentication',
-    icon: ICDashboard,
-    chidlren: [
-      {
-        title: 'Sign In',
-        pathName: '/auth/signin',
-      },
-      {
-        title: 'Sign Up',
-        pathName: '/auth/signup',
-      }
-    ]
-  },
-  {
-    pathName: '/demo',
-    pathNameActive: "demo",
-    title: 'Demo',
-    icon: ICDashboard,
-  },
-]
+];
