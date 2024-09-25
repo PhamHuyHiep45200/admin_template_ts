@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from '../../images/logo/logo.svg';
-import { SideBar, SideBarOther } from '../../config/SideBar';
+import { SideBar } from '../../config/SideBar';
 import SideBarList from './SideBarList';
+import { LogoJR } from '../../images/logo/logoJR';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -10,13 +10,12 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
-
   const trigger = useRef<any>(null);
   const sidebar = useRef<any>(null);
 
   const storedSidebarExpanded = localStorage.getItem('sidebar-expanded');
   const [sidebarExpanded, setSidebarExpanded] = useState<boolean>(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true'
+    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true',
   );
 
   // close on click outside
@@ -57,13 +56,24 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+      }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
         <NavLink to="/">
-          <img src={Logo} alt="Logo" />
+          <div className="flex items-center">
+            <div
+              className="flex items-center justify-center rounded-[1rem] 
+                  bg-white w-15 h-15"
+            >
+              <LogoJR className="relative rounded-[0.25rem]" />
+            </div>
+            <div className="text-3xl text-white items-center justify-center ml-[7px]">
+              JRE Admin
+            </div>
+          </div>
         </NavLink>
 
         <button
@@ -97,14 +107,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               MENU
             </h3>
 
-            <SideBarList menu={SideBar} sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} />
-          </div>
-
-          <div>
-            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
-              OTHERS
-            </h3>
-            <SideBarList menu={SideBarOther} sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} />
+            <SideBarList
+              menu={SideBar}
+              sidebarExpanded={sidebarExpanded}
+              setSidebarExpanded={setSidebarExpanded}
+            />
           </div>
         </nav>
       </div>

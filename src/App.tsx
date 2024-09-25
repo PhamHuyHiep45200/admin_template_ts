@@ -37,118 +37,116 @@ function App() {
       <Routes>
         <Route
           index
+          path="/login-authentication"
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <ECommerce />
+              <PageTitle title="Magage | JRE Admin" />
+              <Demo />
             </>
           }
         />
         <Route
-          path="/calendar"
+          path="/userlogin_management"
           element={
             <>
-              <PageTitle title="Calendar | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Magage | JRE Admin" />
+              <ECommerce />
+            </>
+          }
+        />
+        {/* User Management */}
+        <Route
+          path="/user-info"
+          element={
+            <>
+              <PageTitle title="User Management | JRE Admin" />
               <Calendar />
             </>
           }
         />
         <Route
-          path="/profile"
+          path="/wallet-info"
           element={
             <>
-              <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="User Management | JRE Admin" />
+              <Calendar />
+            </>
+          }
+        />
+        <Route
+          path="/nft-available"
+          element={
+            <>
+              <PageTitle title="User Management | JRE Admin" />
+              <Calendar />
+            </>
+          }
+        />
+        <Route
+          path="/activity-history"
+          element={
+            <>
+              <PageTitle title="User Management | JRE Admin" />
+              <Profile />
+            </>
+          }
+        />
+        {/* NFT Collections Management  */}
+        <Route
+          path="/nft-collections-management"
+          element={
+            <>
+              <PageTitle title="NFT Collections Management | JRE Admin" />
               <Profile />
             </>
           }
         />
         <Route
-          path="/forms/form-elements"
+          path="/nft-manage"
           element={
             <>
-              <PageTitle title="Form Elements | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="NFT Management | JRE Admin" />
+              <FormElements />
+            </>
+          }
+        />
+        {/* Applications Management */}
+        <Route
+          path="/operator-notice"
+          element={
+            <>
+              <PageTitle title="NFT Management | JRE Admin" />
               <FormElements />
             </>
           }
         />
         <Route
-          path="/forms/form-layout"
+          path="/campain-notice"
           element={
             <>
-              <PageTitle title="Form Layout | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <FormLayout />
+              <PageTitle title="NFT Management | JRE Admin" />
+              <FormElements />
             </>
           }
         />
+
+        {/* Notice*/}
+
         <Route
-          path="/tables"
+          path="/notifications"
           element={
             <>
-              <PageTitle title="Tables | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Tables />
-            </>
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            <>
-              <PageTitle title="Settings | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Notifications | JRE Admin" />
               <Settings />
             </>
           }
         />
         <Route
-          path="/chart"
+          path="/notifications"
           element={
             <>
-              <PageTitle title="Basic Chart | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Chart />
-            </>
-          }
-        />
-        <Route
-          path="/ui/alerts"
-          element={
-            <>
-              <PageTitle title="Alerts | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Alerts />
-            </>
-          }
-        />
-        <Route
-          path="/ui/buttons"
-          element={
-            <>
-              <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Buttons />
-            </>
-          }
-        />
-        <Route
-          path="/auth/signin"
-          element={
-            <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <SignIn />
-            </>
-          }
-        />
-        <Route
-          path="/auth/signup"
-          element={
-            <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <SignUp />
-            </>
-          }
-        />
-        <Route
-          path="/demo"
-          element={
-            <>
-              <PageTitle title="Signup | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Demo />
+              <PageTitle title="Notifications | JRE Admin" />
+              <Settings />
             </>
           }
         />

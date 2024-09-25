@@ -1,104 +1,84 @@
-import ICDashboard from "../components/icons/ICDashboard";
-import { SideBarType } from "../models/sidebar";
+import { ICAllNotifications } from '../components/icons/ICAllNotifications';
+import { IcApplication } from '../components/icons/IcApplication';
+import { ICCollections } from '../components/icons/ICCollections';
+import { ICDashboard } from '../components/icons/ICDashboard';
+import { ICManageCollection } from '../components/icons/ICManageCollection';
+import { ICManageUser } from '../components/icons/ICManageUser';
+import { SideBarType } from '../models/sidebar';
 
 export const SideBar: SideBarType[] = [
   {
-    pathName: '/',
-    pathNameActive: "dashboard",
-    title: 'Dashboard',
+    pathName: '/login-authentication',
+    pathNameActive: 'manage',
+    title: 'Manage',
     icon: ICDashboard,
     chidlren: [
       {
-        title: 'eCommerce',
-        pathName: '/',
-      }
-    ]
-  },
-  {
-    pathName: '/calendar',
-    pathNameActive: "calendar",
-    title: 'Calendar',
-    icon: ICDashboard,
-  },
-  {
-    pathName: '/profile',
-    pathNameActive: "profile",
-    title: 'Profile',
-    icon: ICDashboard,
-  },
-  {
-    pathName: '/forms',
-    pathNameActive: "forms",
-    title: 'Forms',
-    icon: ICDashboard,
-    chidlren: [
-      {
-        title: 'Form Elements',
-        pathName: '/forms/form-elements',
+        title: 'Login authentication',
+        pathName: '/login-authentication',
       },
       {
-        title: 'Form Layout',
-        pathName: '/forms/form-layout',
-      }
-    ]
+        title: 'User Login Management',
+        pathName: '/userlogin-management',
+      },
+    ],
   },
   {
-    pathName: '/tables',
-    pathNameActive: "tables",
-    title: 'Tables',
-    icon: ICDashboard,
-  },
-  {
-    pathName: '/settings',
-    pathNameActive: "settings",
-    title: 'Settings',
-    icon: ICDashboard,
-  },
-]
-
-export const SideBarOther: SideBarType[] = [
-  {
-    pathName: '/chart',
-    pathNameActive: "chart",
-    title: 'Chart',
-    icon: ICDashboard,
-  },
-  {
-    pathName: '/ui',
-    pathNameActive: "ui",
-    title: 'UI Elements',
-    icon: ICDashboard,
+    pathName: '/user-info',
+    pathNameActive: 'usermanagement',
+    title: 'User Management',
+    icon: ICManageUser,
     chidlren: [
       {
-        title: 'Alerts',
-        pathName: '/ui/alerts',
+        title: ' User Informations JRE APP',
+        pathName: '/user-info',
       },
       {
-        title: 'Buttons',
-        pathName: '/ui/buttons',
-      }
-    ]
+        title: 'Wallet Informations',
+        pathName: '/wallet-info',
+      },
+      {
+        title: 'Available NFT Informations',
+        pathName: '/nft-available',
+      },
+      {
+        title: 'Activity History',
+        pathName: '/activity-history',
+      },
+    ],
   },
   {
-    pathName: '/auth',
-    pathNameActive: "auth",
-    title: 'Authentication',
-    icon: ICDashboard,
+    pathName: '/nft-collections-management',
+    pathNameActive: 'profile',
+    title: 'NFT Collections Management',
+    icon: ICManageCollection,
+  },
+  {
+    pathName: '/nft-manage',
+    pathNameActive: 'forms',
+    title: 'NFT Management',
+    icon: ICCollections,
+  },
+  {
+    pathName: '/operator-notice',
+    pathNameActive: 'tables',
+    title: 'Application Management',
+    icon: IcApplication,
     chidlren: [
       {
-        title: 'Sign In',
-        pathName: '/auth/signin',
+        title: 'Operator Notice',
+        pathName: '/operator-notice',
       },
       {
-        title: 'Sign Up',
-        pathName: '/auth/signup',
-      }
-    ]
+        title: 'Campain Notice',
+        pathName: '/campain-notice',
+      },
+    ],
   },
   {
-    pathName: '/demo',
-    pathNameActive: "demo",
-    title: 'Demo',
-    icon: ICDashboard,
+    pathName: '/notifications',
+    pathNameActive: 'settings',
+    title: 'Notifications',
+    icon: ICAllNotifications,
   },
-]
+];
