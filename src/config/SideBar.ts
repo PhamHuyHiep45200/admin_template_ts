@@ -8,67 +8,75 @@ import { SideBarType } from '../models/sidebar';
 
 export const SideBar: SideBarType[] = [
   {
-    pathName: '/',
-    pathNameActive: 'dashboard',
+    pathName: '/login-authentication',
+    pathNameActive: 'manage',
     title: 'Manage',
     icon: ICDashboard,
     chidlren: [
       {
         title: 'Login authentication',
-        pathName: '/',
+        pathName: '/login-authentication',
       },
       {
         title: 'User Login Management',
-        pathName: '/',
+        pathName: '/userlogin-management',
       },
     ],
   },
   {
-    pathName: '/calendar',
-    pathNameActive: 'calendar',
+    pathName: '/user-info',
+    pathNameActive: 'usermanagement',
     title: 'User Management',
     icon: ICManageUser,
     chidlren: [
       {
-        title: 'Login authentication',
-        pathName: '/',
+        title: ' User Informations JRE APP',
+        pathName: '/user-info',
       },
       {
-        title: 'User Login Management',
-        pathName: '/',
+        title: 'Wallet Informations',
+        pathName: '/wallet-info',
+      },
+      {
+        title: 'Available NFT Informations',
+        pathName: '/nft-available',
+      },
+      {
+        title: 'Activity History',
+        pathName: '/activity-history',
       },
     ],
   },
   {
-    pathName: '/profile',
+    pathName: '/nft-collections-management',
     pathNameActive: 'profile',
     title: 'NFT Collections Management',
     icon: ICManageCollection,
   },
   {
-    pathName: '/forms',
+    pathName: '/nft-manage',
     pathNameActive: 'forms',
     title: 'NFT Management',
     icon: ICCollections,
+  },
+  {
+    pathName: '/operator-notice',
+    pathNameActive: 'tables',
+    title: 'Application Management',
+    icon: IcApplication,
     chidlren: [
       {
-        title: 'Form Elements',
-        pathName: '/forms/form-elements',
+        title: 'Operator Notice',
+        pathName: '/operator-notice',
       },
       {
-        title: 'Form Layout',
-        pathName: '/forms/form-layout',
+        title: 'Campain Notice',
+        pathName: '/campain-notice',
       },
     ],
   },
   {
-    pathName: '/tables',
-    pathNameActive: 'tables',
-    title: 'Application Management',
-    icon: IcApplication,
-  },
-  {
-    pathName: '/settings',
+    pathName: '/notifications',
     pathNameActive: 'settings',
     title: 'Notifications',
     icon: ICAllNotifications,
