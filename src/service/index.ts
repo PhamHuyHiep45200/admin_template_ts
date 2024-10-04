@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 const instance = axios.create({
-  baseURL: '',
+  baseURL: process.env.BASE_URL_API,
   headers: {
     Accept: "application/json",
   },
