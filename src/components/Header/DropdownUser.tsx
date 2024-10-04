@@ -1,15 +1,31 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import ClickOutside from '../ClickOutside';
-import UserOne from '../../images/user/user-01.png';
 import { LogoJR } from '../../images/logo/logoJR';
 import { IconUser } from '../../images/icon/IconUser';
 import { IconContact } from '../../images/icon/IconContact';
 import { IconLogout } from '../../images/icon/IconLogout';
+// import { Spin } from 'antd';
+import { useDispatch } from 'react-redux';
+// import { RootState } from '../../app/store';
+import { setAuth } from '../../store/authSlice';
 
 const DropdownUser = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [loadingLogOut, setLoadingLogOut] = useState<boolean>(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const handleLogoutClick = () => {
+    setLoadingLogOut(true);
+    dispatch(setAuth(false));
+    setTimeout(() => {
+      localStorage.removeItem('accessToken');
+      localStorage.removeItem('expiration');
+      navigate('/login-authentication');
+      setLoadingLogOut(false);
+    });
+  };
   return (
     <ClickOutside onClick={() => setDropdownOpen(false)} className="relative">
       <Link
@@ -24,7 +40,7 @@ const DropdownUser = () => {
           <span className="block text-xs">Admin Manager</span>
         </span>
 
-        <span className="h-12 w-12 rounded-full flex items-center justify-center border-solid border-[1px] border-black">
+        <span className="h-12 w-12 rounded-[10px] flex items-center justify-center border-solid border-[1px] border-default">
           <LogoJR />
         </span>
 
@@ -60,21 +76,22 @@ const DropdownUser = () => {
                 My Profile
               </Link>
             </li>
-            <li>
-              <Link
-                to="#"
-                className="flex items-center mr-1 gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-secondary lg:text-base"
-              >
-                <IconContact />
-                Contacts For Me
-              </Link>
-            </li>
           </ul>
-          <button className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium  lg:text-base !border-none">
-            <div className="hover:text-secondary">
-              <IconLogout />
+          <button
+            onClick={handleLogoutClick}
+            className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium lg:text-base !border-none"
+            disabled={loadingLogOut}
+          >
+            {loadingLogOut ? (
+              <div className="animate-spin h-5 w-5 border-2 border-t-transparent rounded-full border-[#FF5E5E] mr-2" /> // Loading spinner
+            ) : (
+              <div className="hover:text-secondary">
+                <IconLogout />
+              </div>
+            )}
+            <div className="text-[#FF5E5E]">
+              {loadingLogOut ? 'Logging out...' : 'Log Out'}
             </div>
-            <div className="text-[#FF5E5E]">Log Out</div>
           </button>
         </div>
       )}

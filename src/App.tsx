@@ -1,47 +1,48 @@
-import { useEffect, useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
-import SignIn from './pages/Authentication/SignIn';
-import SignUp from './pages/Authentication/SignUp';
-import Calendar from './pages/Calendar';
-import Chart from './pages/Chart';
-import ECommerce from './pages/Dashboard/ECommerce';
 import FormElements from './pages/Form/FormElements';
-import FormLayout from './pages/Form/FormLayout';
-import Profile from './pages/Profile';
 import Settings from './pages/Settings';
-import Tables from './pages/Tables';
-import Alerts from './pages/UiElements/Alerts';
-import Buttons from './pages/UiElements/Buttons';
-import DefaultLayout from './layout/DefaultLayout';
-import Demo from './pages/Demo';
+import NFTCollections from './pages/UiElements/Tables/NFTCollectionManage/NFTCollections';
+import UserInfo from './pages/UiElements/Tables/UseManage/UserInfo';
+import NFTInfoAvailable from './pages/UiElements/Tables/UseManage/NFTInfoAvailable';
+import ActiveHistory from './pages/UiElements/Tables/UseManage/ActiveHistory';
+import NFTManage from './pages/UiElements/Tables/UseManage/NFTManage';
+import TableAddNewNFT from './pages/UiElements/Tables/UseManage/ListTable/TableAddNewNFT';
+import SignIn from './pages/Authentication/SignIn';
+import AppChildren from './AppChildren';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from './store/store';
+import { setAuth } from './store/authSlice';
+import { useEffect } from 'react';
+import DetaiInforUser from './pages/UiElements/Tables/UseManage/ListTable/DetaiInforUser';
+import WalletInfomations from './pages/UiElements/Tables/UseManage/ListTable/WalletInfomations';
 
 function App() {
-  const [loading, setLoading] = useState<boolean>(true);
-  const { pathname } = useLocation();
+  // const isAuthenticated = useSelector(
+  //   (state: RootState) => state.auth.isAuthenticated,
+  // );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
+    const accessToken = localStorage.getItem('accessToken');
+    console.log(accessToken);
+    if (accessToken) {
+      dispatch(setAuth(true));
+    } else {
+      dispatch(setAuth(false));
+    }
   }, []);
-
-  return loading ? (
-    <Loader />
-  ) : (
-    <DefaultLayout>
+  return (
+    <AppChildren>
       <Routes>
         <Route
           index
-          path="/login-authentication"
+          path="/home"
           element={
             <>
               <PageTitle title="Magage | JRE Admin" />
-              <Demo />
+              <NFTCollections />
             </>
           }
         />
@@ -50,7 +51,7 @@ function App() {
           element={
             <>
               <PageTitle title="Magage | JRE Admin" />
-              <ECommerce />
+              <NFTCollections />
             </>
           }
         />
@@ -59,8 +60,17 @@ function App() {
           path="/user-info"
           element={
             <>
-              <PageTitle title="User Management | JRE Admin" />
-              <Calendar />
+              <PageTitle title="User Infomation | JRE Admin" />
+              <UserInfo />
+            </>
+          }
+        />
+        <Route
+          path="/user-info/:id"
+          element={
+            <>
+              <PageTitle title="Detail Infomation | JRE Admin" />
+              <DetaiInforUser />
             </>
           }
         />
@@ -68,8 +78,8 @@ function App() {
           path="/wallet-info"
           element={
             <>
-              <PageTitle title="User Management | JRE Admin" />
-              <Calendar />
+              <PageTitle title="Wallet Infomation | JRE Admin" />
+              <WalletInfomations />
             </>
           }
         />
@@ -77,8 +87,8 @@ function App() {
           path="/nft-available"
           element={
             <>
-              <PageTitle title="User Management | JRE Admin" />
-              <Calendar />
+              <PageTitle title="Available NFT Infomations | JRE Admin" />
+              <NFTInfoAvailable />
             </>
           }
         />
@@ -86,8 +96,8 @@ function App() {
           path="/activity-history"
           element={
             <>
-              <PageTitle title="User Management | JRE Admin" />
-              <Profile />
+              <PageTitle title="Activity History| JRE Admin" />
+              <ActiveHistory />
             </>
           }
         />
@@ -97,16 +107,26 @@ function App() {
           element={
             <>
               <PageTitle title="NFT Collections Management | JRE Admin" />
-              <Profile />
+              <NFTCollections />
             </>
           }
         />
+        {/* NFT Manage*/}
         <Route
           path="/nft-manage"
           element={
             <>
               <PageTitle title="NFT Management | JRE Admin" />
-              <FormElements />
+              <NFTManage />
+            </>
+          }
+        />
+        <Route
+          path="/add-new-nft-manage"
+          element={
+            <>
+              <PageTitle title="NFT Management | JRE Admin" />
+              <TableAddNewNFT />
             </>
           }
         />
@@ -131,7 +151,6 @@ function App() {
         />
 
         {/* Notice*/}
-
         <Route
           path="/notifications"
           element={
@@ -142,16 +161,19 @@ function App() {
           }
         />
         <Route
-          path="/notifications"
+          path="/login-authentication"
           element={
             <>
-              <PageTitle title="Notifications | JRE Admin" />
-              <Settings />
+              <PageTitle title="Login | JRE Admin" />
+              <SignIn />
             </>
           }
         />
       </Routes>
-    </DefaultLayout>
+      {/* <div className="h-screen flex items-center justify-center bg-[#e7e7e7]">
+          <Routes></Routes>
+        </div> */}
+    </AppChildren>
   );
 }
 

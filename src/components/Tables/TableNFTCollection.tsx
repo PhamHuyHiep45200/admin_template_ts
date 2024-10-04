@@ -2,28 +2,166 @@ import { Package } from '../../types/package';
 
 const packageData: Package[] = [
   {
-    name: 'Free package',
-    price: 0.0,
-    invoiceDate: `Jan 13,2023`,
+    id: 1,
+    collectionsName: 'Free package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x01010101010101010101010101010101010',
     status: 'Paid',
+    actions: 'Paid',
   },
   {
-    name: 'Standard Package',
-    price: 59.0,
-    invoiceDate: `Jan 13,2023`,
-    status: 'Paid',
+    id: 2,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x01010101010101010101010101010101010',
+    status: 'Active',
+    actions: 'Active',
   },
   {
-    name: 'Business Package',
-    price: 99.0,
-    invoiceDate: `Jan 13,2023`,
-    status: 'Unpaid',
+    id: 3,
+    collectionsName: 'Business Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x01010101010101010101010101010101010',
+    status: 'Active',
+    actions: 'Active',
   },
   {
-    name: 'Standard Package',
-    price: 59.0,
-    invoiceDate: `Jan 13,2023`,
+    id: 4,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x01010101010101010101010101010101010',
+    status: 'Active',
+    actions: 'Pending',
+  },
+  {
+    id: 5,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x01010101010101010101010101010101010',
+    status: 'Active',
+    actions: 'Active',
+  },
+  {
+    id: 6,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x01010101010101010101010101010101010',
+    status: 'Active',
+    actions: 'Active',
+  },
+  {
+    id: 7,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x010101010101010101010101010101010102',
     status: 'Pending',
+    actions: 'Pending',
+  },
+  {
+    id: 8,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x010101010101010101010101010101010103',
+    status: 'Active',
+    actions: 'Active',
+  },
+  {
+    id: 9,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x010101010101010101010101010101010105',
+    status: 'Close',
+    actions: 'Close',
+  },
+  {
+    id: 10,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x010101010101010101010101010101010106',
+    status: 'Pending',
+    actions: 'Pending',
+  },
+  {
+    id: 11,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x0101010101010101010101010101010101011',
+    status: 'Close',
+    actions: 'Close',
+  },
+  {
+    id: 12,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x0101010101010101010101010101010101012',
+    status: 'Pending',
+    actions: 'Pending',
+  },
+  {
+    id: 13,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x0101010101010101010101010101010101016',
+    status: 'Pending',
+    actions: 'Pending',
+  },
+  {
+    id: 14,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x0101010101010101010101010101010101017',
+    status: 'Pending',
+    actions: 'Pending',
+  },
+  {
+    id: 15,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x0101010101010101010101010101010101015',
+    status: 'Close',
+    actions: 'Close',
+  },
+  {
+    id: 16,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x0101010101010101010101010101010101014',
+    status: 'Close',
+    actions: 'Close',
+  },
+  {
+    id: 17,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x0101010101010101010101010101010101013',
+    status: 'Close',
+    actions: 'Close',
+  },
+  {
+    id: 18,
+    collectionsName: 'Standard Package',
+    publisher: 'JRE Team',
+    createdDate: `Jan 13,2023`,
+    walletAddress: '0x01010101010101010101010101010101099013',
+    status: 'Pending',
+    actions: 'Pending',
   },
 ];
 
@@ -34,11 +172,20 @@ const TableThree = () => {
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
-              <th className="min-w-[220px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
-                Package
+              <th className="min-w-[20px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
+                ID
+              </th>
+              <th className="min-w-[20px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
+                Collections Name
+              </th>
+              <th className="min-w-[20px] py-4 px-4 font-medium text-black dark:text-white xl:pl-11">
+                Publisher
               </th>
               <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
-                Invoice date
+                Creat At Date
+              </th>
+              <th className="min-w-[150px] py-4 px-4 font-medium text-black dark:text-white">
+                Wallet Address
               </th>
               <th className="min-w-[120px] py-4 px-4 font-medium text-black dark:text-white">
                 Status
@@ -51,23 +198,37 @@ const TableThree = () => {
           <tbody>
             {packageData.map((packageItem, key) => (
               <tr key={key}>
+                <td className="border-b border-[#eee] py-5 px-4  dark:border-strokedark xl:pl-11">
+                  <h5 className="font-medium text-black dark:text-white">
+                    {packageItem.id}
+                  </h5>
+                </td>
                 <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
                   <h5 className="font-medium text-black dark:text-white">
-                    {packageItem.name}
+                    {packageItem.collectionsName}
                   </h5>
-                  <p className="text-sm">${packageItem.price}</p>
+                </td>
+                <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark xl:pl-11">
+                  <h5 className="font-medium text-black dark:text-white">
+                    {packageItem.publisher}
+                  </h5>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p className="text-black dark:text-white">
-                    {packageItem.invoiceDate}
+                    {packageItem.createdDate}
+                  </p>
+                </td>
+                <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
+                  <p className="text-black dark:text-white">
+                    {packageItem.walletAddress}
                   </p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
                   <p
                     className={`inline-flex rounded-full bg-opacity-10 py-1 px-3 text-sm font-medium ${
-                      packageItem.status === 'Paid'
+                      packageItem.status === 'Active'
                         ? 'bg-success text-success'
-                        : packageItem.status === 'Unpaid'
+                        : packageItem.status === 'Close'
                         ? 'bg-danger text-danger'
                         : 'bg-warning text-warning'
                     }`}

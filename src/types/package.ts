@@ -1,6 +1,9 @@
 export type Package = {
-  name: string;
-  price: number;
-  invoiceDate: string;
+  id: number;
+  collectionsName: string;
+  publisher: string;
+  createdDate: string;
+  walletAddress: string;
   status: string;
+  actions: string;
 };

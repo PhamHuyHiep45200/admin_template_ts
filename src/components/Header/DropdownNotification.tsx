@@ -25,9 +25,7 @@ const DropdownNotification = () => {
           >
             <span className="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
           </span>
-          {/* <div className="h-[34px] w-[34px] bg-graylight rounded-full flex items-center justify-center mx-7"> */}
           <IconNotify />
-          {/* </div> */}
         </Link>
 
         {dropdownOpen && (

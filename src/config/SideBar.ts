@@ -8,14 +8,14 @@ import { SideBarType } from '../models/sidebar';
 
 export const SideBar: SideBarType[] = [
   {
-    pathName: '/login-authentication',
-    pathNameActive: 'manage',
+    pathName: '/home',
+    pathNameActive: '/userlogin-management',
     title: 'Manage',
     icon: ICDashboard,
     chidlren: [
       {
         title: 'Login authentication',
-        pathName: '/login-authentication',
+        pathName: '/home',
       },
       {
         title: 'User Login Management',
@@ -25,43 +25,43 @@ export const SideBar: SideBarType[] = [
   },
   {
     pathName: '/user-info',
-    pathNameActive: 'usermanagement',
+    pathNameActive: '/user-info',
     title: 'User Management',
     icon: ICManageUser,
-    chidlren: [
-      {
-        title: ' User Informations JRE APP',
-        pathName: '/user-info',
-      },
-      {
-        title: 'Wallet Informations',
-        pathName: '/wallet-info',
-      },
-      {
-        title: 'Available NFT Informations',
-        pathName: '/nft-available',
-      },
-      {
-        title: 'Activity History',
-        pathName: '/activity-history',
-      },
-    ],
+    // chidlren: [
+    //   {
+    //     title: ' User Informations JRE APP',
+    //     pathName: '/user-info',
+    //   },
+    //   {
+    //     title: 'Wallet Informations',
+    //     pathName: '/wallet-info',
+    //   },
+    //   {
+    //     title: 'Available NFT Informations',
+    //     pathName: '/nft-available',
+    //   },
+    //   {
+    //     title: 'Activity History',
+    //     pathName: '/activity-history',
+    //   },
+    // ],
   },
   {
     pathName: '/nft-collections-management',
-    pathNameActive: 'profile',
+    pathNameActive: '/nft-collections-management',
     title: 'NFT Collections Management',
     icon: ICManageCollection,
   },
   {
     pathName: '/nft-manage',
-    pathNameActive: 'forms',
+    pathNameActive: '/nft-manage',
     title: 'NFT Management',
     icon: ICCollections,
   },
   {
     pathName: '/operator-notice',
-    pathNameActive: 'tables',
+    pathNameActive: '/campain-notice',
     title: 'Application Management',
     icon: IcApplication,
     chidlren: [
@@ -77,7 +77,7 @@ export const SideBar: SideBarType[] = [
   },
   {
     pathName: '/notifications',
-    pathNameActive: 'settings',
+    pathNameActive: 'notifications',
     title: 'Notifications',
     icon: ICAllNotifications,
   },
